@@ -47,6 +47,10 @@ public class Projeto {
         user.projetoVinculado = this;
     }
 
+    public void addAtividade(Atividade atv){
+        this.atividades.add(atv);
+    }
+
     public String getId() {
         return id;
     }
@@ -121,5 +125,14 @@ public class Projeto {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public Usuario buscaUsuario(String email){
+        for(Usuario u : profissionaisEnvolv){
+            if(u.getEmail().equalsIgnoreCase(email)){
+                return u;
+            }
+        }
+        return null;
     }
 }
