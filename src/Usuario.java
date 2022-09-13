@@ -3,9 +3,11 @@ public class Usuario {
     String email;
     String senha;
     String tipo;
+    boolean isVinculado;
     boolean isCoordenador;
     Projeto projetoVinculado;
     Atividade atividadeVinculada;
+    double saldo;
     
     public Usuario(String nome, String email, String senha, String tipo) {
         this.nome = nome;
@@ -13,10 +15,12 @@ public class Usuario {
         this.senha = senha;
         this.tipo = tipo;
         this.projetoVinculado = null;
+        this.saldo = 0;
     }
     
     public Usuario() {
         this.projetoVinculado = null;
+        this.saldo = 0;
     }
 
     public String toString(){
@@ -67,6 +71,7 @@ public class Usuario {
 
     public void setProjetoVinculado(Projeto projetoVinculado) {
         this.projetoVinculado.addUsuario(this);
+        setVinculado(true);
     }
 
     public Atividade getAtividadeVinculada() {
@@ -84,5 +89,23 @@ public class Usuario {
     public void setCoordenador(boolean isCoordenador) {
         this.isCoordenador = isCoordenador;
     }
+
+    public boolean isVinculado(){
+        return isVinculado;
+    }
+
+    public void setVinculado(boolean isVinculado){
+        this.isVinculado = isVinculado;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    
     
 }
