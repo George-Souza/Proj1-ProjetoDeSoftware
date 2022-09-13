@@ -9,9 +9,11 @@ public class Atividade {
     String horaFim;
     Usuario responsavel;
     ArrayList<Usuario> profissionaisEnvolv;
+    ArrayList<Tarefa> tarefas;
 
     public Atividade(){
         profissionaisEnvolv = new ArrayList<>();
+        tarefas = new ArrayList<>();
     }
 
     public String toString(){
